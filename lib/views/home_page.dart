@@ -162,7 +162,15 @@ class _HomePageState extends State<HomePage> {
         children:
             ClipFilter.values.map((filter) {
               return FilterChip(
-                label: Text(filter.toString().split('.').last),
+                label: Text(
+                  filter.toString().split('.').last,
+                  style: TextStyle(
+                    color:
+                        _controller.currentFilter.value == filter
+                            ? Colors.white
+                            : Colors.black,
+                  ),
+                ),
                 selected: _controller.currentFilter.value == filter,
                 onSelected: (selected) {
                   _controller.currentFilter.value = filter;
