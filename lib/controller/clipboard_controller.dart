@@ -187,7 +187,10 @@ class ClipboardController extends GetxController {
         category: category,
       ),
     );
-    _saveClips();
+
+    filterClips(); // 👈 Add this
+    _saveClips(); // Save after updateclips.refresh(); // Rarely needed, but forces updates
+   
   }
 
   // Clip Management
